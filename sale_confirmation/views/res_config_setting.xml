@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="sale_res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">sale.config.settings.view.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]//div[contains(@data-key, 'sale_management')]//div[1]"
+                       position="inside">
+                    <div class="col-12 col-lg-6 o_setting_box" id="sale_order_approval">
+                        <div class="o_setting_left_pane">
+                            <field name="sale_order_approval"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="sale_order_approval"/>
+                            <span class="fa fa-lg fa-building-o" title="Values set here are company-specific."
+                                  aria-label="Values set here are company-specific." groups="base.group_multi_company"
+                                  role="img"/>
+                            <div class="text-muted">
+                                Request System Admin to approve Sale Orders above a minimum amount.
+                            </div>
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label for="sale_order_approval_amount" class="col-lg-4 o_light_label"/>
+                                    <field name="sale_order_approval_amount"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
